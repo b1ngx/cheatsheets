@@ -1,8 +1,7 @@
 # ubuntu
 
 ## 安装
-- ubuntu U盘装机
-[Universal-USB-Installer](http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
+-  [Universal-USB-Installer](http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
 
 - [Ubuntu 16.04 安装基础入门教程（图文）](http://forum.ubuntu.org.cn/viewtopic.php?f=77&t=478527)
 
@@ -13,7 +12,7 @@
 - [UNetbootin](https://unetbootin.github.io/)
 
 ## 问题
-- 安装 Ubuntu 16.04 时需将硬盘模式改为 IDE，否则出现找不到硬盘。
+- 安装 Ubuntu 16.04 时需将硬盘模式改为 IDE，否则出现找不到硬盘，
  16.10 版本支持 ACHI.
 
 - 设置 pip 镜像源
