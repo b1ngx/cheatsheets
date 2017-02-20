@@ -10,5 +10,6 @@
   - [ssh](ssh.md)
   - [nginx](nginx.md)
   - [https](https.md)
-- [nodejs](nodejs.md)
-- [docker](docker.md)
+  - [nodejs](nodejs.md)
+  - [docker](docker.md)
+- [python]
