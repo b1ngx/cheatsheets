@@ -12,10 +12,10 @@
 - [UNetbootin](https://unetbootin.github.io/)
 
 ## 问题
-- 安装 Ubuntu 16.04 时需将硬盘模式改为 IDE，否则出现找不到硬盘，
- 16.10 版本支持 ACHI.
+##### 安装 Ubuntu 16.04 时找不到硬盘
+需将硬盘模式改为 IDE，否则出现找不到硬盘，16.10 版本支持 ACHI.
 
-- 设置 pip 镜像源
+##### 设置 pip 镜像源
 创建 ~/.pip/pip.conf 文件
 添加设置
 ```
@@ -24,12 +24,14 @@ index-url = http://pypi.douban.com/simple
 [install]
 trusted-host = pypi.douban.com
 ```
-http://www.jianshu.com/p/d109e5009c65
-http://ryerh.com/python/2016/04/08/installing-scrapy-in-ubuntu.html
+windows 下修改 `%PYTHON_HOME%\Lib\site-packages\pip\cmdoptions.py` 文件
 
- windows 下修改 `%PYTHON_HOME%\Lib\site-packages\pip\cmdoptions.py` 文件
+参考
+- http://www.jianshu.com/p/d109e5009c65
+- http://ryerh.com/python/2016/04/08/installing-scrapy-in-ubuntu.html
 
-- DNS
+
+##### DNS
 修改文件 `/etc/network/interfaces` 添加 `dns-nameservers 8.8.8.8`
 或 `/etc/resolvconf/resolv.conf.d/base` 添加 `nameserver 8.8.8.8`
 通过命令 `cat /etc/resolv.conf` 查看效果
