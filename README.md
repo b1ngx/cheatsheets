@@ -1,18 +1,18 @@
-Python and Linux
+Linux and Python
 
 ## 初衷
 整理所学
 
 ## 目录
 - [ubuntu](ubuntu.md)
-  - [zsh](zsh.md)
-  - [vim](vim.md)
-  - [ssh](ssh.md)
-  - [nginx](nginx.md)
-  - [https](https.md)
-  - [nodejs](nodejs.md)
-  - [docker](docker.md)
-  - [shadowsocks](shadowsocks.md)
+  - [zsh](ubuntu/zsh.md)
+  - [vim](ubuntu/vim.md)
+  - [ssh](ubuntu/ssh.md)
+  - [nginx](ubuntu/nginx.md)
+  - [https](ubuntu/https.md)
+  - [nodejs](ubuntu/nodejs.md)
+  - [docker](ubuntu/docker.md)
+  - [shadowsocks](ubuntu/shadowsocks.md)
 - [python](python/python.md)
 
 ## 参考
