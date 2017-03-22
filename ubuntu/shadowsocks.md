@@ -6,6 +6,9 @@ pip install shadowsocks
 ```
 
 ## 配置
+
+- 客户端
+
 ```
 {
       "server": "187.188.189.190",
@@ -13,12 +16,17 @@ pip install shadowsocks
       "password": "********"
 }
 
+```
+
+- 服务端
+
+```
 {
-    "server": "128.199.189.222",
+    "server": "187.188.189.190",
     "local_address": "127.0.0.1",
     "local_port": 1080,
     "port_password":{
-        "25": "5LSNSnjQOmCS"
+        "8388": "password"
     },
     "timeout": 300,
     "method": "aes-256-cfb",
@@ -41,9 +49,10 @@ sslocal -c /home/b1ng/ss.json -d start
 sslocal -c 配置文件 -d start/stop/restart
 ```
 
-
 ## 开机启动
+
 - supervisor
+
 进程管理工具
 ```
 # /etc/supervisor/conf.d/ss.conf
