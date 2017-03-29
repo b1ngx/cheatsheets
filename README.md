@@ -15,7 +15,7 @@ Linux and Python
   - [shadowsocks](ubuntu/shadowsocks.md)
 - [python](python/python.md)
   - [pip](python/pip.md)
-  - [virtualenv.md](python/virtualenv.md)
+  - [virtualenv](python/virtualenv.md)
 
 ## 参考
 - [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
