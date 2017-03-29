@@ -16,6 +16,9 @@ Linux and Python
 - [python](python/python.md)
   - [pip](python/pip.md)
   - [virtualenv](python/virtualenv.md)
+  - [ipython](python/ipython.md)
+  - [django](python/django.md)
+  - [scrapy](python/scrapy.md)
 
 ## 参考
 - [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
