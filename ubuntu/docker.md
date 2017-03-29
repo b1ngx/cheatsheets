@@ -34,5 +34,5 @@ rm -rf /var/lib/docker
 https://docs.docker.com/engine/installation/linux/ubuntulinux/#/uninstallation
 
 ## nodejs
-https://www.oschina.net/translate/develop-a-nodejs-app-with-docker
-http://www.widuu.com/docker/node.html
+- https://www.oschina.net/translate/develop-a-nodejs-app-with-docker
+- http://www.widuu.com/docker/node.html

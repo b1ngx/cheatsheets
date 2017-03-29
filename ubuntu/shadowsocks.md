@@ -78,8 +78,6 @@ service supervisor start
 exit 0
 ```
 
-重启
-
 ### 全局代理
 安装 polipo
 ```
