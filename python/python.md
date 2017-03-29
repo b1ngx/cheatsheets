@@ -1,3 +1,5 @@
+# awesome
+
 - [Python 3 documentation](https://docs.python.org/3/index.html)
 最官方的文档，据说大神们都是看这个
 - [Python 入门指南](http://www.pythondoc.com/pythontutorial3/index.html)
