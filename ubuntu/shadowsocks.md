@@ -7,7 +7,7 @@ pip install shadowsocks
 
 ## 配置
 
-- 客户端
+客户端
 
 ```
 {
@@ -18,7 +18,7 @@ pip install shadowsocks
 
 ```
 
-- 服务端
+服务端
 
 ```
 {
@@ -37,13 +37,15 @@ pip install shadowsocks
 
 ## 命令
 
-- 服务端
+服务端
+
 ```
 ssserver -c 配置文件 -d start/stop/restart
 ssserver -c /etc/shadowsocks.json -d restart
 ```
 
-- 客户端
+客户端
+
 ```
 sslocal -c /home/b1ng/ss.json -d start
 sslocal -c 配置文件 -d start/stop/restart
@@ -52,8 +54,9 @@ sslocal -c 配置文件 -d start/stop/restart
 ## 开机启动
 
 安装 `supervisor`
+
 ```
-sudo apt-get install supervisor
+sudo apt install supervisor
 ```
 
 编辑文件 `/etc/supervisor/conf.d/shadowsocks.conf`
@@ -100,6 +103,7 @@ serverSlots = 16
 serverSlots1 = 32
 ```
 重启 polipo 服务
+
 ```
 sudo /etc/init.d/polipo restart
 ```
