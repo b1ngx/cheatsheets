@@ -14,6 +14,7 @@ Linux and Python
   - [docker](ubuntu/docker.md)
   - [shadowsocks](ubuntu/shadowsocks.md)
 - [python](python/python.md)
+  - [pip](python/pip.md)
 
 ## 参考
 - [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
