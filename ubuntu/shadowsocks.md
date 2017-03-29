@@ -51,11 +51,14 @@ sslocal -c 配置文件 -d start/stop/restart
 
 ## 开机启动
 
-- supervisor
-
-进程管理工具
+安装 `supervisor`
 ```
-# /etc/supervisor/conf.d/ss.conf
+sudo apt-get install supervisor
+```
+
+编辑文件 `/etc/supervisor/conf.d/shadowsocks.conf`
+
+```
 [program:shadowsocks]
 command=sslocal -c /home/b1ng/.shadowsocks.json
 autostart=true
@@ -65,8 +68,14 @@ log_stderr=true
 logfile=/var/log/shadowsocks.log
 ```
 
-- 开机启动
-编辑 `/etc/rc.local` 文件，在 `exit 0` 前面一行加上 `service supervisor start`，重启机器
+编辑文件 `/etc/rc.local`
+
+```
+service supervisor start
+exit 0
+```
+
+重启
 
 ### 全局代理
 安装 polipo
