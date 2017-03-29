@@ -27,4 +27,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ## 参考
 
 - [终极 Shell——ZSH](https://zhuanlan.zhihu.com/p/19556676)
-- [installation](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
+- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
