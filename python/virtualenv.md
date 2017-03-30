@@ -29,5 +29,11 @@ echo "source `which activate.sh`" >> ~/.bashrc
 ```
 source ~/py/rpi/venv/bin/activate
 ```
+
+## virtualenvwrapper
+
+http://railslide.io/virtualenvwrapper-python3.html
+
+
 ## ref
 http://docs.python-guide.org/en/latest/dev/virtualenvs/
