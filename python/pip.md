@@ -13,14 +13,12 @@ python get-pip.py
 python3 get-pip.py
 ```
 
-### 镜像源
+## 镜像源
 
-### ubuntu 
-
+ubuntu
 在 `~/.pip/pip.conf` 文件下添加
 
-### window
-
+window
 在目录 `C:\Users\BinG\pip\pip.ini` 下添加
 
 ```
