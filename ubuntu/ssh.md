@@ -16,7 +16,3 @@ Keys need to be only readable by you:
 chmod 400 ~/.ssh/id_rsa
 ```
 edit: 600 appears to be fine as well (in fact better, per comment), have a peek at this article.
-
-## ref
-https://askubuntu.com/questions/306798/trying-to-do-ssh-authentication-with-key-files-server-refused-our-key
-https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-centos-7
