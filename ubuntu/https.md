@@ -7,6 +7,7 @@
 
 ## SSL 证书机构
 https://letsencrypt.org/  过期时间 90 天
+
 https://www.startssl.com/ 免费的 Class 1 SSL 证书支持 5 个域名
 
 ## https
@@ -39,3 +40,6 @@ https://www.startssl.com/ 免费的 Class 1 SSL 证书支持 5 个域名
 
 ## 问题
 nginx 中的配置项 ssl_trusted_certificate 是什么，怎么配置
+
+## 参考
+[Let's Encrypt SSL证书配置](http://www.jianshu.com/p/eaac0d082ba2)
