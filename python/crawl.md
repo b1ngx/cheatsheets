@@ -27,9 +27,7 @@ ref
 - [使用 mitmproxy 监控 HTTP 请求](http://liuxiang.logdown.com/posts/192057-use-mitmproxy-to-monitor-http-requests)
 - [和Charles同样强大的iOS免费抓包工具mitmproxy](https://mp.weixin.qq.com/s?__biz=MzI5MjEzNzA1MA==&mid=2650264262&idx=1&sn=4e39741c236d7a0c03c5955c4efcf67f)
 
-## XPath
-[XPath 教程](http://www.ziqiangxuetang.com/xpath/xpath-intro.html)
-
 ## 参考
-- [Python爬虫学习系列教程]http://cuiqingcai.com/1052.html
+- [Python爬虫学习系列教程](http://cuiqingcai.com/1052.html)
+- [XPath 教程](http://www.ziqiangxuetang.com/xpath/xpath-intro.html)
 
