@@ -5,7 +5,7 @@
 - [Python 教程](http://goo.gl/M3yI71)
 廖雪峰的 python 教程
 - [Python Cheatsheet](https://www.pythonsheets.com)
-- [learnxinyminutes](https://learnxinyminutes.com/docs/zh-cn/python3-cn/)
+- [Learn python3 in Y Minutes](https://learnxinyminutes.com/docs/zh-cn/python3-cn/)
 - [Python 3 Module of the Week](https://pymotw.com/3/index.html)
 
 
