@@ -29,3 +29,7 @@ ref
 
 ## XPath
 [XPath 教程](http://www.ziqiangxuetang.com/xpath/xpath-intro.html)
+
+## 参考
+- [Python爬虫学习系列教程]http://cuiqingcai.com/1052.html
+
