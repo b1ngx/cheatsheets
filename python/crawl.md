@@ -1,9 +1,16 @@
+PhantomJS (没有界面的浏览器) 用来渲染解析JS，Selenium (自动化测试工具) 用来驱动以及与 Python 的对接，Python 进行后期的处理
+
 ## phantomjs
 Unable to load Atom 'find_element' from file ':/ghostdriver/./third_party/webdriver-atoms/find_element.js'
 not full-function Phantomjs installed by apt-get
+
+[下载](http://phantomjs.org/download.html)
+
+```
 1. tar -xvf phantomjs-1.9.7-linux-x86_64.tar.bz2
 2. sudo mv phantomjs-1.9.7-linux-x86_64 /usr/local/share/phantomjs
 3. sudo ln -sf /usr/local/share/phantomjs/bin/phantomjs /usr/local/bin/phantomjs
+```
 
 ## selenium
 webdriver.Chrome() 报错 'chromedriver' executable needs to be in PATH.
