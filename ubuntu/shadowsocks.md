@@ -13,7 +13,8 @@ pip install shadowsocks
 {
       "server": "187.188.189.190",
       "server_port": 8388,
-      "password": "********"
+      "password": "********",
+      "method": "aes-256-cfb"
 }
 
 ```
@@ -111,6 +112,17 @@ export http_proxy="http://127.0.0.1:8123/"
 curl ip.gs
 unset http_proxy
 ```
+
+## chrome
+
+### Proxy SwitchyOmega
+[SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases) 是一个代理设置工具，用于便捷地管理多个代理以及在代理之间切换。
+
+
+### GFWList
+
+https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak
+
 
 ## 参考
 - [Shadowsocks 使用说明](https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
