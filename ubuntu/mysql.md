@@ -21,6 +21,25 @@ iptables -I INPUT -p tcp -m tcp --dport 3306 -j ACCEPT
 
 // 删除 INPUR 第 1 条规则
 iptables -D INPUT 1
+
+//Disable firewalld by the following command:
+systemctl disable firewalld
+
+//Then install iptables-service by following command:
+yum install iptables-services
+
+//Then enable iptables as services:
+systemctl enable iptables
+
+//Now you can save your iptable rules by following command:
+service iptables save
+```
+
+## Firewall Rules
+```
+firewall-cmd --permanent --zone=trusted --add-source=192.0.2.10/32
+firewall-cmd --permanent --zone=trusted --add-port=3306/tcp
+firewall-cmd  --reload
 ```
 
 ## ref
