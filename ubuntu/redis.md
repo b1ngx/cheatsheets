@@ -3,9 +3,9 @@ centos7 下安装 redis
 
 ## Installation
 
-编译和安装所需要的包
+install the CentOS Development Tools, which are used to allow you to build and compile software from source code.
 ```
-yum install gcc tcl
+yum -y groupinstall development
 ```
 
 进入源码目录：
