@@ -39,7 +39,7 @@ service iptables save
 ```
 firewall-cmd --permanent --zone=trusted --add-source=192.0.2.10/32
 firewall-cmd --permanent --zone=trusted --add-port=3306/tcp
-firewall-cmd  --reload
+firewall-cmd --reload
 ```
 
 ## ref
