@@ -37,9 +37,16 @@ service iptables save
 
 ## Firewall Rules
 ```
-firewall-cmd --permanent --zone=trusted --add-source=192.0.2.10/32
+// 查看
+firewall-cmd --permanent --zone=trusted --list-sources
+firewall-cmd --permanent --zone=trusted --list-ports
+// add 子网掩码 225.225.252.0 port=3306
+firewall-cmd --permanent --zone=trusted --add-source=192.168.0.0/22
 firewall-cmd --permanent --zone=trusted --add-port=3306/tcp
 firewall-cmd --reload
+// remove
+firewall-cmd --permanent --zone=trusted --remove-source=192.168.0.0/22
+firewall-cmd --permanent --zone=trusted --remove-port=3306/tcp
 ```
 
 ## ref
