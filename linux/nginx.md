@@ -1,14 +1,20 @@
 # nginx
 
+## 安装
+
 ## 命令
 
 ```
 systemctl start nginx     //启动服务
-systemctl stop nginx      //停止服务
 systemctl enable nginx    //开机启动服务
 systemctl restart nginx   //重新加载配置
+```
 
-//301 重定向
+## configure
+
+301 重定向
+
+```
 server {
     server_name abc.com;
     rewrite ^/(.*)$ http://www.abc.com/$1 permanent;

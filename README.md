@@ -4,22 +4,25 @@ Linux and Python
 整理所学
 
 ## 目录
-- [ubuntu](ubuntu.md)
-  - [zsh](ubuntu/zsh.md)
-  - [vim](ubuntu/vim.md)
-  - [ssh](ubuntu/ssh.md)
-  - [nginx](ubuntu/nginx.md)
-  - [https](ubuntu/https.md)
-  - [nodejs](ubuntu/nodejs.md)
-  - [docker](ubuntu/docker.md)
-  - [shadowsocks](ubuntu/shadowsocks.md)
+- [linux](ubuntu.md)
+  - [zsh](linux/zsh.md)
+  - [vim](linux/vim.md)
+  - [ssh](linux/ssh.md)
+  - [nginx](linux/nginx.md)
+  - [https](linux/https.md)
+  - [nodejs](linux/nodejs.md)
+  - [docker](linux/docker.md)
+  - [shadowsocks](linux/shadowsocks.md)
 - [python](python/python.md)
   - [pip](python/pip.md)
+  - [REPL](python/REPL.md)
   - [virtualenv](python/virtualenv.md)
-  - [ipython](python/ipython.md)
-  - [django](python/django.md)
   - [scrapy](python/scrapy.md)
+  - [django](python/django.md)
+
 
 ## 参考
 - [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
 - [Python Web开发实战](https://github.com/dongweiming/web_develop)
+
+

@@ -1,4 +1,4 @@
-# Headless
+# scrapy
 
 PhantomJS (没有界面的浏览器) 用来渲染解析JS，Selenium (自动化测试工具) 用来驱动以及与 Python 的对接，Python 进行后期的处理
 
