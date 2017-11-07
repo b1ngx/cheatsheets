@@ -1,6 +1,6 @@
 # mysql
 
-## install
+## Install
 
 
 ## config
@@ -52,3 +52,5 @@ firewall-cmd --permanent --zone=trusted --remove-port=3306/tcp
 ## ref
 
 [MySQL5.7安装与配置](http://blog.csdn.net/xyang81/article/details/51759200)
+
+

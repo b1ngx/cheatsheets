@@ -20,6 +20,7 @@
 ##### 设置 pip 镜像源
 创建 ~/.pip/pip.conf 文件
 添加设置
+
 ```
 [global]
 index-url = http://pypi.douban.com/simple
@@ -44,3 +45,5 @@ diskutil list
 diskutil unmountDisk /dev/disk1
 dd if=CentOS-6.5-x86_64-bin-DVD1.iso of=/dev/sdb
 ```
+
+

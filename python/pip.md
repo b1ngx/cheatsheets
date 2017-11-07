@@ -4,11 +4,13 @@
 下载 [get-pip.py](https://bootstrap.pypa.io/get-pip.py)
 
 安装 pip
+
 ```
 python get-pip.py
 ```
 
 安装 pip3
+
 ```
 python3 get-pip.py
 ```
@@ -28,3 +30,5 @@ index-url = http://pypi.douban.com/simple
 [install]
 trusted-host = pypi.douban.com
 ```
+
+

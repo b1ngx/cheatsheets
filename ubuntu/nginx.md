@@ -1,6 +1,7 @@
 # nginx
 
 ## 命令
+
 ```
 systemctl start nginx     //启动服务
 systemctl stop nginx      //停止服务
@@ -26,3 +27,5 @@ centos 7 nginx 安装指南
 
 - [Nginx基本配置备忘](https://zhuanlan.zhihu.com/p/24524057)
 nginx 配置 & https
+
+

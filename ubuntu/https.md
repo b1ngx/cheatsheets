@@ -21,7 +21,10 @@ https://www.startssl.com/ 免费的 Class 1 SSL 证书支持 5 个域名
 使用 webroot 的方式进行生成
 
 执行命令
-` certbot certonly --webroot -w /usr/share/nginx/html/ -d www.yunliewang.com -d yunliewang.com`
+
+```
+certbot certonly --webroot -w /usr/share/nginx/html/ -d www.yunliewang.com -d yunliewang.com
+```
 
 ## 衍生品
 [gethttpsforfree](https://gethttpsforfree.com)
@@ -43,3 +46,5 @@ nginx 中的配置项 ssl_trusted_certificate 是什么，怎么配置
 
 ## 参考
 [Let's Encrypt SSL证书配置](http://www.jianshu.com/p/eaac0d082ba2)
+
+

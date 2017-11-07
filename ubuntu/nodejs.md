@@ -1,6 +1,7 @@
 # nodejs
 
 ## 安装
+
 ```
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -25,10 +26,15 @@ PORT=2016 pm2 start ./bin/www
 
 ## npm
 设置淘宝镜像源
-`npm config set registry https://registry.npm.taobao.org`
+
+```
+npm config set registry https://registry.npm.taobao.org
+```
 
 ## 参考链接
 - [nvm](https://github.com/creationix/nvm)
 - [pm2](https://github.com/Unitech/pm2)
 - [How To Set Up a Node.js Application for Production on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-centos-7)
 - https://github.com/Unitech/pm2/issues/428#issuecomment-176726334
+
+

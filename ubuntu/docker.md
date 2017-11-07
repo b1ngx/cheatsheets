@@ -3,9 +3,11 @@
 ## 安装
 
 使用如下命令
+
 ```
 $ curl -fsSL https://get.docker.com/ | sh
 ```
+
 参考：https://docs.docker.com/engine/getstarted/linux_install_help/
 
 ## 镜像
@@ -25,7 +27,7 @@ CMD
 WORKDIR
 ADD
 
-## uninstall
+## Uninstall
 ```
 sudo apt-get purge docker-engine
 sudo apt-get autoremove --purge docker-engine
@@ -33,6 +35,8 @@ rm -rf /var/lib/docker
 ```
 https://docs.docker.com/engine/installation/linux/ubuntulinux/#/uninstallation
 
-## nodejs
+## Nodejs
 - https://www.oschina.net/translate/develop-a-nodejs-app-with-docker
 - http://www.widuu.com/docker/node.html
+
+

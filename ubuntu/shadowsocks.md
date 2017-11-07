@@ -81,10 +81,13 @@ exit 0
 
 ### 全局代理
 安装 polipo
+
 ```
 sudo apt-get install polipo
 ```
+
 修改 polipo 的配置文件 `/etc/polipo/config`
+
 ```
 logSyslog = true
 logFile = /var/log/polipo/polipo.log
@@ -101,12 +104,15 @@ serverMaxSlots = 64
 serverSlots = 16
 serverSlots1 = 32
 ```
+
 重启 polipo 服务
 
 ```
 sudo /etc/init.d/polipo restart
 ```
+
 polipo默认运行在8123端口，可以通过以下方式测试是否连接成功
+
 ```
 export http_proxy="http://127.0.0.1:8123/"
 curl ip.gs
@@ -134,3 +140,5 @@ https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak
 - [ubuntu+shadowsocks+polipo做全局代理](http://dearmadman.com/2015/08/30/use-shadowsocks-in-ubuntu/)
 - [为终端设置Shadowsocks代理](http://droidyue.com/blog/2016/04/04/set-shadowsocks-proxy-for-terminal/index.html)
 - [Ubuntu server命令行配置shadowsocks全局代理](https://jingsam.github.io/2016/05/08/setup-shadowsocks-http-proxy-on-ubuntu-server.html)
+
+

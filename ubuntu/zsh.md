@@ -7,11 +7,13 @@ sudo apt install zsh
 ```
 
 查看已安装的 shell
+
 ```
 cat /etc/shells
 ```
 
 设置 shell 为 zsh
+
 ```
 chsh -s /bin/zsh
 ```
@@ -20,6 +22,7 @@ chsh -s /bin/zsh
 
 ## oh-my-zsh
 安装
+
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
@@ -28,3 +31,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 - [终极 Shell——ZSH](https://zhuanlan.zhihu.com/p/19556676)
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
+
+
