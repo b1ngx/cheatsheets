@@ -2,6 +2,16 @@
 
 ## 安装
 
+To add NGINX yum repository, create a file named /etc/yum.repos.d/nginx.repo and paste one of the configurations below:
+
+```
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1
+```
+
 ## 命令
 
 ```
@@ -28,10 +38,9 @@ nginx 官方文档
 - [Nginx HTTP server boilerplate configs](https://github.com/h5bp/server-configs-nginx)
 nginx 参考配置模板
 
-- [How To Install Nginx on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7)
-centos 7 nginx 安装指南
-
 - [Nginx基本配置备忘](https://zhuanlan.zhihu.com/p/24524057)
 nginx 配置 & https
 
+- [Centos下 Nginx安装与配置](http://www.jianshu.com/p/d5114a2a2052)
+  手动（manual）安装 nginx
 
