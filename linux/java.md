@@ -7,10 +7,20 @@
 
 ## Usage
 
-下载
+1、安装 `openjdk`
+
+```
+yum install java-1.8.0-openjdk
+```
+
+2、安装 `orcle jdk`
 
 ``` 
-wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.rpm" 
+# 下载
+wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.rpm" 
+
+# 安装
+rpm -ivh jdk-8u161-linux-x64.rpm
 ```
 
 检查是否安装成功
@@ -35,4 +45,8 @@ export PATH=$PATH:$JAVA_HOME
 rpm -qa | grep jdk
 yum -y remove jdk1.8-1.8.0_151-fcs.x86_64 
 ```
+
+## ref
+http://openjdk.java.net/install/
+
 

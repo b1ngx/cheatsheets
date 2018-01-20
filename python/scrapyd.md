@@ -27,7 +27,7 @@ scrapyd
 执行爬虫
 
 ```
-curl http://localhost:6800/schedule.json -d project=myproject -d spider=myspider
+curl http://192.168.1.243:6801/schedule.json -d project=toutiao -d spider=hnpatent
 ```
 
 ## scrapyd-deploy
@@ -36,9 +36,16 @@ curl http://localhost:6800/schedule.json -d project=myproject -d spider=myspider
 
 ```
 scrapyd-deploy
+```
+
+If you have more than one target to deploy, you can deploy your project in all targets with one command:
+
+```
 scrapyd-deploy -a -p <project>
 ```
 
 scrapyd 只是爬虫服务，通过 scrapyd-deploy deploy your project to a Scrapyd server.
+
+
 
 
