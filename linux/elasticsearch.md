@@ -3,12 +3,30 @@
 
 ## 安装
 
-- [Install Elasticsearch with .zip or .tar.gz](https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-targz.html)
-- [Configuring system settings](https://www.elastic.co/guide/en/elasticsearch/reference/current/setting-system-settings.html)
+#### 手动安装
 
-Running as a daemon
+[Install Elasticsearch with .zip or .tar.gz](https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-targz.html)
+
+下载最新包
 
 ```
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.2.tar.gz
+tar -xzf elasticsearch-6.1.2.tar.gz
+cd elasticsearch-6.1.2/
+```
+
+由于 Elasticsearch 不能以 `root` 权限运行，先添加用户组，然后赋予权限
+
+```
+useradd es
+chown -R  es:es /home/es/elasticsearch-6.1.2
+```
+
+运行 Running as a daemon
+
+```
+su es
+cd $ES_HOME
 ./bin/elasticsearch -d -p pid
 ```
 
@@ -18,15 +36,54 @@ Shutdown
 kill `cat pid`
 ```
 
-Elasticsearch 不能以 `root` 权限运行，先添加组和用户，然后赋予权限
+配置文件位置 `$ES_HOME/config/elasticsearch.yml`
+
+运行中的系统参数设置参照 [Configuring system settings](https://www.elastic.co/guide/en/elasticsearch/reference/current/setting-system-settings.html) 进行配置
+
+#### RPM 安装
+
+导入 PGP key
 
 ```
-useradd es
-chown -R  es:es /home/es/elasticsearch-6.1.2
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+```
+配置 RPM 源
+
+```
+[elasticsearch-6.x]
+name=Elasticsearch repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+```
+安装
+
+```
+yum install elasticsearch
 ```
 
-配置文件 `config/elasticsearch.yml
+通过 `systemd` 运行
 
+```
+systemctl daemon-reload
+systemctl enable elasticsearch
+systemctl start/stop/status elasticsearch
+```
+
+配置文件位置
+
+```
+/etc/elasticsearch
+```
+
+$ES_HOME 位置在
+
+```
+/usr/share/elasticsearch
+```
 
 ## 语法
 
@@ -111,4 +168,5 @@ http.cors.allow-origin: "*"
     ...       
 </properties>
 ```
+
 
