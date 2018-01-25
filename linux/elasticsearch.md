@@ -87,18 +87,6 @@ $ES_HOME 位置在
 
 ## 语法
 
-#### 搜索
-
-```
-GET _search
-{
-  "query": {
-    "match_all": {}
-  }
-}
-
-```
-
 #### 索引
 
 ```
@@ -146,6 +134,126 @@ GET toutiao/article/1?_source=title,site
 
 # 删除文档
 DELETE toutiao/article/1
+```
+
+#### 搜索
+
+```
+# 返回 20 条结果
+GET _search
+{
+  "query": {
+    "match_all": {}
+  },
+  "from": 0,
+  "size": 20
+}
+
+# match 查询，对关键词分词，并进行大小写转换
+GET toutiao/_search
+{
+  "query": {
+    "match": {
+      "title": "大数据 "
+    }
+  }
+}
+
+# term 查询，完全匹配，不做大小写转换
+#GET toutiao/_search
+{
+  "query": {
+    "term": {
+      "site_name": "河南科技网"
+    }
+  }
+}
+
+# terms 多个关键字查询
+GET toutiao/_search
+{
+  "query": {
+    "terms": {
+      "title": ["河南", "企业"]
+    }
+  }
+}
+
+# 短语查询，满足所有词，并指定词间的最大距离
+GET toutiao/_search
+{
+  "query": {
+    "match_phrase": {
+      "title": {
+        "query": "河南企业",
+        "slop": 6
+      }
+    }
+  }
+}
+
+# 多字段查询
+GET toutiao/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "河南企业",
+      "fields": ["title", "site_name"]
+    }
+  }
+}
+
+# 指定返回的字段
+GET toutiao/doc/_search
+{
+  "stored_fields": ["site_name", "url_fingerprint"],
+  "query": {
+    "match": {
+      "title": "大数据 "
+    }
+  }
+}
+
+# 排序
+GET toutiao/doc/_search
+{
+  "query": {
+    "match": {
+      "title": "大数据 "
+    }
+  },
+  "sort": [{ "publish_date": { "order": "desc" } }]
+}
+
+# 范围查询
+GET toutiao/_search
+{
+  "query": { 
+    "range": { "publish_date": { "gte": "2017-01-23" } } 
+  }
+}
+
+# bool查询，must, filter, should, must_not
+"bool": {
+  "must": [],
+  "filter": [],  
+  "should": [],
+  "must_not": []
+}
+
+# bool 组合查询
+GET toutiao/_search
+{
+  "query": {
+    "bool": {
+      "filter": [
+        { "range": { "publish_date": { "gte": "2017-01-23" } } }
+      ],
+      "must": [{ "match": { "title": "大数据" } }]
+    }
+  },
+  "sort": [{ "publish_date": { "order": "desc" } }]
+}
 ```
 
 ## 插件
