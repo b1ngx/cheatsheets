@@ -5,10 +5,18 @@
 使用如下命令
 
 ```
-$ curl -fsSL https://get.docker.com/ | sh
+# Install required packages. 
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+# set up the stable repository
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install docker-ce
 ```
 
-参考：https://docs.docker.com/engine/getstarted/linux_install_help/
+参考：[Get Docker CE for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
 
 ## 镜像
 docker images
@@ -27,16 +35,11 @@ CMD
 WORKDIR
 ADD
 
-## Uninstall
+## 卸载
+
 ```
-sudo apt-get purge docker-engine
-sudo apt-get autoremove --purge docker-engine
+yum remove docker-ce
 rm -rf /var/lib/docker
 ```
-https://docs.docker.com/engine/installation/linux/ubuntulinux/#/uninstallation
-
-## Nodejs
-- https://www.oschina.net/translate/develop-a-nodejs-app-with-docker
-- http://www.widuu.com/docker/node.html
 
 

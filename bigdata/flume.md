@@ -12,7 +12,4 @@
 修改 `/conf/flume-env.sh` 的 `JAVA_HOME`
 执行 `flume-ng` 是否安装成功
 
-## 
-
-
 

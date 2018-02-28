@@ -25,10 +25,10 @@ window
 
 ```
 [global]
-index-url = http://pypi.douban.com/simple
+index-url = https://mirrors.aliyun.com/pypi/simple/
 
 [install]
-trusted-host = pypi.douban.com
+trusted-host=mirrors.aliyun.com
 ```
 
 
