@@ -2,33 +2,9 @@
 
 ## Prerequisites
 
-升级 linux 内核，官方 Centos 7：http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
-
-```
-#导入ELRepo 公钥
-rpm -import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-#安装ELRepo
-rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
-#升级最新内核
-yum --enablerepo=elrepo-kernel install kernel-ml -y
-```
-
-查看内核启动顺序
-
-```
-awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
-egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \'
-```
-
-内核升级完成后老的内核和新的会同时存在，CentOS 7 使用 grub2 引导程序，需要将最新内核优先级调整最高。
-
-```
-grub2-set-default 0
-reboot
-
-#查看内核版本
-uname -r
-```
+CentOS 7
+Linux kernel 3.10.0-693
+overlay2
 
 ## 安装
 
@@ -46,17 +22,73 @@ yum-config-manager \
 yum makecache fast
 yum install docker-ce
 ```
+- [Get Docker CE for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
 
-参考：[Get Docker CE for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
+#### overlay2
+编辑 `/etc/docker/daemon.json` 文件.
+
+```
+{
+  "storage-driver": "overlay2"
+}
+```
+- [Use the OverlayFS storage driver](https://docs.docker.com/storage/storagedriver/overlayfs-driver/)
+
+#### 镜像加速
+编辑 `/etc/docker/daemon.json` 文件.
+
+```
+{
+  "registry-mirrors": ["https://registry.docker-cn.com"]
+}
+```
+- [the China registry mirror](https://docs.docker.com/registry/recipes/mirror/#use-case-the-china-registry-mirror)
+
+#### 内核参数
+
+默认配置下，如果在 CentOS 使用 Docker CE 看到下面的这些警告信息：
+
+```
+WARNING: bridge-nf-call-iptables is disabled
+WARNING: bridge-nf-call-ip6tables is disabled
+```
+
+添加内核配置参数以启用这些功能
+
+```
+tee -a /etc/sysctl.conf <<-EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+
+#重新加载，使配置生效
+sysctl -p
+```
+
+#### 用户组
+```
+#建立 docker 组：
+groupadd docker
+
+#将当前用户加入 docker 组：
+usermod -aG docker $USER
+
+#退出当前终端并重新登录，
+```
+
+#### 参考：
+- [CentOS 安装 Docker CE](https://yeasy.gitbooks.io/docker_practice/content/install/centos.html)
 
 ## 镜像
 docker images
 docker rmi images_id
+docker rmi $(docker images -q)
 
 ## 容器
 docker run -t -i container_id
 docker ps
 docker rm container_id
+docker rm $(docker ps -aq)
 
 ## Dockerfile
 FROM
@@ -66,6 +98,8 @@ CMD
 WORKDIR
 ADD
 
+## compose
+
 ## 卸载
 
 ```
@@ -73,9 +107,6 @@ yum remove docker-ce
 rm -rf /var/lib/docker
 ```
 
-## 参考
-- [CentOS 安装 Docker CE](https://yeasy.gitbooks.io/docker_practice/content/install/centos.html)
-- [升级Centos 7/6内核版本到4.12.4的方法](https://www.centos.bz/2017/08/upgrade-centos-7-6-kernel-to-4-12-4/)
-- [CentOS 6/7升级最新内核并开启Google BBR](https://www.centos.bz/2018/01/centos-6-7%E5%8D%87%E7%BA%A7%E6%9C%80%E6%96%B0%E5%86%85%E6%A0%B8%E5%B9%B6%E5%BC%80%E5%90%AFgoogle-bbr/)
+
 
 
