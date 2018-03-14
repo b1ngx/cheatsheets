@@ -17,11 +17,11 @@ yum install certbot
 certbot certonly --webroot -w /usr/share/nginx/html -d domain.com -m email@email.com --agree-tos
 
 # 更新证书
-/usr/bin/certbot renew --quiet --agree-tos
+/usr/bin/certbot renew --force-renewal
 
 # crontab 定时任务
 crontab -e
-0 0 1 */1 * /usr/bin/certbot renew --quiet --agree-tos
+0 0 1 */1 * /usr/bin/certbot renew --force-renewal
 ```
 
 #### acme.sh
@@ -58,6 +58,8 @@ crontab 配置图解
 
 [Let's Encrypt 给网站加 HTTPS 完全指南](https://ksmx.me/letsencrypt-ssl-https/)
 使用 certbot 给网站 https 的过程，比较详细
+
+[如何免费的让网站启用HTTPS](https://coolshell.cn/articles/18094.html)
 
 
 ## 问题
