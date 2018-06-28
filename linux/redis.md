@@ -113,7 +113,7 @@ ZREVRANGEBYSCORE toutiao_views +inf -inf LIMIT 0 5
 认证密码
  
  ```
- # 修改配置完文件，将密码设置为 secret_password
+ # 修改配置文件，将密码设置为 secret_password
  requirepass secret_password
  
  # 或者通过命令

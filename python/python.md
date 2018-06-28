@@ -1,15 +1,14 @@
 # awesome
 
-- [Python documentation](https://docs.python.org/3/index.html)
-  最官方的文档，据说大神们都是看这个
 - [Python 教程](http://goo.gl/M3yI71)
-廖雪峰的 python 教程
-- [Python Cheatsheet](https://www.pythonsheets.com)
-- [Learn python3 in Y Minutes](https://learnxinyminutes.com/docs/zh-cn/python3-cn/)
+  廖雪峰的 python 教程
+  
+- [Python Cookbook 3rd Edition](Python Cookbook 3rd Edition Documentation)
 - [Python 3 Module of the Week](https://pymotw.com/3/index.html)
 
-
 ## windows 平台出现的错误
+
+
 ### 安装 scrapy 出现 `error: Unable to find vcvarsall.bat`
 
 [How to deal with the pain of “unable to find vcvarsall.bat”](https://blogs.msdn.microsoft.com/pythonengineering/2016/04/11/unable-to-find-vcvarsall-bat/) 
