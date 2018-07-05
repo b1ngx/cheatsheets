@@ -4,20 +4,20 @@
 
 找出系统安装的中文字体
 
-```
-import matplotlib  
+```python
+import matplotlib
 
 %matplotlib inline
 
-ttfs = sorted([f.name for f in matplotlib.font_manager.fontManager.ttflist])  
-  
+ttfs = sorted([f.name for f in matplotlib.font_manager.fontManager.ttflist])
+
 for t in ttfs:
     print(t)
 ```
 
 设置 plt.rcParams['font.family'] 为系统安装的字体
 
-```
+```py
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -37,5 +37,3 @@ df.plot(title="折线图",figsize=(10,6))
 ```
 
 参考：https://blog.csdn.net/gmr2453929471/article/details/78655834
-
-
