@@ -109,7 +109,7 @@ http {
         ssl_stapling on;
         ssl_stapling_verify on;
 
-	location / {
+        location / {
             proxy_pass http://127.0.0.1:8000;
             proxy_set_header Host $host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -131,6 +131,32 @@ http {
 
 }
 ```
+
+## Docker
+
+在 docker 中做反向代理的时候，docker 网络的问题
+
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    location / {
+        proxy_pass http://webapp;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+
+upstream webapp {
+    server webapp:5042;
+}
+```
+
+参考：
+
+- https://medium.com/@joatmon08/using-containers-to-learn-nginx-reverse-proxy-6be8ac75a757
+- https://www.thepolyglotdeveloper.com/2017/03/nginx-reverse-proxy-containerized-docker-applications/
 
 ## ref
 - [官方指南](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-red-hat-centos-packages)

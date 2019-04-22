@@ -49,6 +49,25 @@ acme.sh --installcert -d domain.com   \
 
 更新：目前证书在 60 天以后会自动更新
 
+#### Docker
+```
+docker run -it --rm --name certbot \
+           -v "/etc/letsencrypt:/etc/letsencrypt" \
+           -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+           -v "/usr/share/nginx/html:/data/www" \
+           certbot/certbot \
+           certonly --webroot \
+           --webroot-path /data/www \
+           --email zhuluojimall@gmail.com \
+           -d toutiaopro.com
+```
+
+参考
+
+- https://www.humankode.com/ssl/how-to-set-up-free-ssl-certificates-from-lets-encrypt-using-docker-and-nginx
+- https://medium.com/bros/enabling-https-with-lets-encrypt-over-docker-9cad06bdb82b
+- https://dev.to/domysee/setting-up-a-reverse-proxy-with-nginx-and-docker-compose-29jg
+
 ## 参考
 [https 配置生成器](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 mozilla https 配置
@@ -65,7 +84,5 @@ crontab 配置图解
 ## 问题
 - openssl 是什么？
 - nginx 中的配置项 ssl_trusted_certificate 是什么，怎么配置？
-
-
 
 
