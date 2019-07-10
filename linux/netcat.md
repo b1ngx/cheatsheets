@@ -1,4 +1,5 @@
 # nc
+arbitrary TCP and UDP connections and listens
 
 ## 安装
 
