@@ -24,31 +24,6 @@ crontab -e
 0 0 1 */1 * /usr/bin/certbot renew --force-renewal
 ```
 
-#### acme.sh
-
-安装 [acme.sh](https://acme.sh/)
-
-```
-curl  https://get.acme.sh | sh
-```
-
-生成证书
-
-```
-acme.sh --issue -d mydomain.com --webroot  /usr/share/nginx/html
-```
-
-安装证书
-
-```
-acme.sh --installcert -d domain.com   \
-        --key-file    /etc/nginx/ssl/domain.com \
-        --fullchain-file /etc/nginx/ssl/fullchain.cer \
-        --reloadcmd  "service nginx force-reload"
-```
-
-更新：目前证书在 60 天以后会自动更新
-
 #### Docker
 
 docker-compose.yml
