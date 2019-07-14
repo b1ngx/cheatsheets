@@ -13,15 +13,15 @@
 # 安装 certbot
 yum install certbot
 
-# webroot 验证
+# webroot 模式
 certbot certonly --webroot -w /usr/share/nginx/html -d domain.com -m email@email.com --agree-tos
 
-# 更新证书
-/usr/bin/certbot renew --force-renewal
+# 更新命令
+/usr/bin/certbot renew
 
-# crontab 定时任务
+# 定时更新
 crontab -e
-0 0 1 */1 * /usr/bin/certbot renew --force-renewal
+0 0,12 * * * . /etc/profile; python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew
 ```
 
 #### Docker
