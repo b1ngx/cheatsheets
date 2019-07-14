@@ -50,17 +50,58 @@ acme.sh --installcert -d domain.com   \
 更新：目前证书在 60 天以后会自动更新
 
 #### Docker
+
+docker-compose.yml
+
+```
+nginx:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/log/nginx:/var/log/nginx
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/www/letsencrypt:/var/www/letsencrypt
+    restart: always
+```
+
+nginx.conf
+
+```
+location ~ /.well-known/acme-challenge {
+            allow all;
+            root /var/www/letsencrypt;
+        }
+```
+
+生成证书
+
 ```
 docker run -it --rm --name certbot \
            -v "/etc/letsencrypt:/etc/letsencrypt" \
            -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
-           -v "/usr/share/nginx/html:/data/www" \
+           -v "/var/www/letsencrypt:/var/www/letsencrypt" \
            certbot/certbot \
            certonly --webroot \
-           --webroot-path /data/www \
-           --email zhuluojimall@gmail.com \
-           -d toutiaopro.com
+           --webroot-path /var/www/letsencrypt \
+           --email example@gmail.com \
+           -d example.com
 ```
+
+更新证书
+
+```
+docker run -it --rm --name certbot \
+           -v "/etc/letsencrypt:/etc/letsencrypt" \
+           -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+           -v "/var/www/letsencrypt:/var/www/letsencrypt" \
+           certbot/certbot \
+           renew
+```
+
+重启 nginx, that's ok.
 
 参考
 
