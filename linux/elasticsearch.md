@@ -20,6 +20,8 @@ cd elasticsearch-6.1.2/
 ```
 useradd es
 chown -R  es:es /home/es/elasticsearch-6.1.2
+
+chown -R elasticsearch:elasticsearch /var/lib/elasticsearch
 ```
 
 运行 Running as a daemon

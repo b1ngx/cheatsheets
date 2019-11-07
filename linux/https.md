@@ -85,11 +85,12 @@ docker run -it --rm --name certbot \
 - https://dev.to/domysee/setting-up-a-reverse-proxy-with-nginx-and-docker-compose-29jg
 
 ## 参考
-[https 配置生成器](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
-mozilla https 配置
 
-[crontab.guru](https://crontab.guru/#0_0_1_*/1_*)
+Mozilla SSL Configuration Generator
+[https://ssl-config.mozilla.org/](https://ssl-config.mozilla.org/)
+
 crontab 配置图解
+[crontab.guru](https://crontab.guru/#0_0_1_*/1_*)
 
 [Let's Encrypt 给网站加 HTTPS 完全指南](https://ksmx.me/letsencrypt-ssl-https/)
 使用 certbot 给网站 https 的过程，比较详细
