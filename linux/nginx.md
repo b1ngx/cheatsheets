@@ -38,9 +38,9 @@ make && make install
 编译参数：http://nginx.org/en/docs/configure.html
 
 ### 命令
-nginx -v：查看 nginx 版本
-nginx -V：查看编译信息
-nginx -t：验证配置文件 `/etc/nginx/nginx.conf`
+- nginx -v：查看 nginx 版本
+- nginx -V：查看编译信息
+- nginx -t：验证配置文件 `/etc/nginx/nginx.conf`
 
 
 
