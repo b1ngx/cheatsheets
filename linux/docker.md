@@ -24,11 +24,16 @@ yum install docker-ce
 ```
 - [Get Docker CE for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)
 
-#### overlay2
+#### 配置
 编辑 `/etc/docker/daemon.json` 文件.
 
 ```
 {
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
   "storage-driver": "overlay2"
 }
 ```
@@ -39,7 +44,12 @@ yum install docker-ce
 
 ```
 {
-  "registry-mirrors": ["https://registry.docker-cn.com"]
+  "registry-mirrors": [
+    "https://registry.docker-cn.com",
+    "http://hub-mirror.c.163.com",
+    "http://docker.mirrors.ustc.edu.cn",
+    "http://dockerhub.azk8s.cn"
+  ]
 }
 ```
 - [the China registry mirror](https://docs.docker.com/registry/recipes/mirror/#use-case-the-china-registry-mirror)
