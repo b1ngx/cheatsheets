@@ -25,9 +25,32 @@ dd if=CentOS-6.5-x86_64-bin-DVD1.iso of=/dev/sdb
 https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/
 
 #### DNS
-修改文件 `/etc/network/interfaces` 添加 `dns-nameservers 8.8.8.8`
-或 `/etc/resolvconf/resolv.conf.d/base` 添加 `nameserver 8.8.8.8`
-通过命令 `cat /etc/resolv.conf` 查看效果
+修改 `/etc/netplan/01-netcfg.yaml`
+
+```
+network:
+    version: 2
+    renderer: NetworkManager
+    ethernets:
+        eth0:
+            dhcp4: true
+            nameservers:
+                addresses: [1.1.1.1,1.0.0.1]
+```
+
+Once done save the file and apply the changes with
+
+```
+$ sudo netplan --debug apply
+```
+
+To verify that the new DNS resolvers are set, run the following command
+
+```
+$ systemd-resolve --status | grep 'DNS Servers' -A2
+```
+
+https://linuxize.com/post/how-to-set-dns-nameservers-on-ubuntu-18-04/
 
 #### docker
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
