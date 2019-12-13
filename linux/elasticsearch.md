@@ -87,6 +87,15 @@ $ES_HOME 位置在
 /usr/share/elasticsearch
 ```
 
+#### Docker
+Dockerfile
+
+```
+FROM elasticsearch:7.3.2
+
+RUN sh -c '/bin/echo -e "y" | bin/elasticsearch-plugin install https://hxdatacdn.oss-cn-beijing.aliyuncs.com/elasticsearch-analysis-ik-7.3.2.zip'
+```
+
 ## 语法
 
 #### 索引
