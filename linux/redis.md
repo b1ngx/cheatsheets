@@ -1,40 +1,30 @@
 # Redis
-centos7 下安装 redis
+
+Redis是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的键值对存储数据库。
+
 
 ## Install
 
-install the CentOS Development Tools, which are used to allow you to build and compile software from source code.
+Download, extract and compile Redis with:
 
 ```
-yum -y groupinstall development
-```
-
-进入源码目录：
-
-```
-cd /opt
-wget http://download.redis.io/releases/redis-4.0.6.tar.gz
-tar xzvf redis-4.0.6.tar.gz
-cd redis-4.0.6
-```
-
-安装(安装在/usr/local/bin目录下)
-
-```
-make
-make test
-make install
+$ wget http://download.redis.io/releases/redis-5.0.7.tar.gz
+$ tar xzf redis-5.0.7.tar.gz
+$ cd redis-5.0.7
+$ make
+$ make install
 ```
 
 
 ## Service
+
 将Redis注册成服务
 
 ```
 ./utils/install_server.sh
 ```
 
-按提示操作，安装完成
+按提示操作
 
 ```
 Welcome to the redis service installer
@@ -67,6 +57,7 @@ Installation successful!
 
 
 ## Config
+
 修改配置 `/etc/redis/6379.conf`
 
 ```
@@ -89,11 +80,11 @@ service redis status/start/stop
 常用命令
 
 ```
-#验证连接
-PING
-
 #远程连接
 redis-cli -h [host] -p [port] -a [password]
+
+#验证连接
+PING
 
 #认证
 AUTH password
@@ -112,15 +103,15 @@ ZREVRANGEBYSCORE toutiao_views +inf -inf LIMIT 0 5
 
 认证密码
  
- ```
- # 修改配置文件，将密码设置为 secret_password
- requirepass secret_password
+```
+# 修改配置文件，将密码设置为 secret_password
+requirepass secret_password
  
- # 或者通过命令
- CONFIG SET requirepass secret_password
- QUIT
- AUTH secret_password
- ```
+# 或者通过命令
+CONFIG SET requirepass secret_password
+QUIT
+AUTH secret_password
+```
  
 ## Ref
 [Redis Install](https://realguess.net/2014/07/19/non-interactive-redis-install/)
