@@ -41,6 +41,7 @@ make && make install
 - nginx -v：查看 nginx 版本
 - nginx -V：查看编译信息
 - nginx -t：验证配置文件 `/etc/nginx/nginx.conf`
+- nginx -s reload：重新加载配置文件
 
 
 
