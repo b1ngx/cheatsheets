@@ -84,6 +84,22 @@ docker run -it --rm --name certbot \
 - https://medium.com/bros/enabling-https-with-lets-encrypt-over-docker-9cad06bdb82b
 - https://dev.to/domysee/setting-up-a-reverse-proxy-with-nginx-and-docker-compose-29jg
 
+#### ubuntu
+解决设置 `sudo add-apt-repository ppa:certbot/certbot` 或更新 `apt update` paa 时的网络问题
+
+
+1. 查找 certbot 的 ppa 源，https://launchpad.net/~certbot/+archive/ubuntu/certbot
+2. 修改为 科大 LUG 的源，https://lug.ustc.edu.cn/wiki/mirrors/help/revproxy
+3. ⚠️注意需要为 **https**
+
+修改 `/etc/apt/source.list` 
+
+```
+deb https://launchpad.proxy.ustclug.org/certbot/certbot/ubuntu bionic main
+```
+
+参考：https://github.com/ustclug/mirrorrequest/issues/43
+
 ## 参考
 
 Mozilla SSL Configuration Generator
