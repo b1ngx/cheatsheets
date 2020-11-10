@@ -8,7 +8,7 @@
 
 ### 源码
 
-> 由于发行版缺少一些必要的模块，或者所以用的版本不符合要去，可以选择从源码安装，选择自己需要的模块。例如 TLS 1.3 需要 openssl 1.1.1 以上。
+> 由于发行版缺少一些必要的模块，或者所用的版本不符合要求，可以选择从源码安装，选择自己需要的模块。例如 TLS 1.3 需要 openssl 1.1.1 以上版本。
 
 #### OpenSSL
 openssl 从 `1.1.1` 开始支持 `TLSv1.3`
@@ -210,6 +210,21 @@ upstream webapp {
 
 - https://medium.com/@joatmon08/using-containers-to-learn-nginx-reverse-proxy-6be8ac75a757
 - https://www.thepolyglotdeveloper.com/2017/03/nginx-reverse-proxy-containerized-docker-applications/
+
+## WebSocket
+
+逐跳（hop-by-hop）头包含的 “Upgrade” and “Connection”，无法从客户端转发到代理服务器，为了使代理服务器了解客户端将协议切换到 WebSocket 的意图，必须明确传递以下标头：
+
+```
+location /chat/ {
+    proxy_pass http://backend;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
+```
+
+参考链接：http://nginx.org/en/docs/http/websocket.html
 
 ## ref
 - [官方指南](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-red-hat-centos-packages)
