@@ -1,71 +1,25 @@
 # mysql
 
-## 安装
-1. 访问下载页面 `https://dev.mysql.com/downloads/repo/yum/`
-2. 下载 `https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm`
-3. 安装 package: `rpm -ivh mysql57-community-release-el7-11.noarch.rpm`
-4. 安装 MySQL server: `yum install mysql-server`
-
-## 配置
-
-- 配置文件：/etc/my.cnf
-- 日志文件：/var/log/mysqld.log
-- 服务启动脚本：/usr/lib/systemd/system/mysqld.service
-- socket文件：/var/run/mysqld/mysqld.pid
-
-## 命令
-
-系统命令
-
+## Get Started
+安装
 ```
-systemctl start mysqld
-systemctl status mysqld
+sudo apt update
+sudo apt install mysql-server
+sudo mysql_secure_installation
 ```
 
-mysql
-
+创建用户
 ```
-mysql --help
-mysql -u root -p
-mysql -h [host/ip] -P [port] -u [user] -p [password]
+CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
+省略 `authentication_plugin`，默认的加密插件为 `aching_sha2_password`
 
-## 权限管理
-
-查看权限
-
+## Grant Privileges
 ```
-mysql> show grants;
-+------------------------------------------------------------+
-| Grants for sam@%                                           |
-+------------------------------------------------------------+
-| GRANT ALL PRIVILEGES ON *.* TO 'sam'@'%' WITH GRANT OPTION |
-+------------------------------------------------------------+
-1 row in set (0.00 sec)
-```
-
-查看某个用户的权限：
-
-```
-mysql> show grants for 'sam';
-+------------------------------------------------------------+
-| Grants for sam@%                                           |
-+------------------------------------------------------------+
-| GRANT ALL PRIVILEGES ON *.* TO 'sam'@'%' WITH GRANT OPTION |
-+------------------------------------------------------------+
-1 row in set (0.00 sec)
-```
-
-刷新权限
-
-```
-flush privileges;
-```
-
-添加权限
-
-```
-grant all privileges on *.* to sam@'localhost' identified by "password" with grant option;
+GRANT PRIVILEGE ON database.table TO 'username'@'host';
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 ```
 
 命令说明
@@ -80,11 +34,19 @@ grant all privileges on *.* to sam@'localhost' identified by "password" with gra
 
 >可以使用GRANT重复给用户添加权限，权限叠加，比如你先给用户添加一个select权限，然后又给用户添加一个insert权限，那么该用户就同时拥有了select和insert权限。
 
-## mariadb
+## QA
 
-## ref
+MySQL won't start - error: su: warning: cannot change directory to /nonexistent: No such file or directory.
+```
+sudo service mysql stop
+sudo usermod -d /var/lib/mysql/ mysql
+sudo service mysql start
+```
+https://stackoverflow.com/questions/62987154/mysql-wont-start-error-su-warning-cannot-change-directory-to-nonexistent
 
-[MySQL5.7安装与配置](http://blog.csdn.net/xyang81/article/details/51759200)
-[How To Install MySQL on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-centos-7)
+## Ref
+
 [MySQL之权限管理](https://www.cnblogs.com/Richardzhu/p/3318595.html)
-
+[Install MySQL on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
+[在 Ubuntu 上安装 MySQL](https://blog.csdn.net/liang19890820/article/details/105071479)
+[Navicat Premium 15](https://www.skyfinder.cc/2020/01/12/database-navicat-premium15/)
