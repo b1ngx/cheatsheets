@@ -10,14 +10,15 @@
 [certbot](https://certbot.eff.org/#centosrhel7-nginx) 使用 webroot 的方式进行生成，执行命令
 
 ```
-# 安装 certbot
+# 安装
 yum install certbot
 
-# webroot 模式
-certbot certonly --webroot -w /usr/share/nginx/html -d domain.com -m email@email.com --agree-tos
+# obtain
 
-# 更新命令
-/usr/bin/certbot renew
+certbot --nginx
+
+# renewal
+/usr/bin/certbot renew --dry-run
 
 # 定时更新
 crontab -e
