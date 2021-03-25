@@ -9,6 +9,9 @@
 ## this
 
 
+## promise
 
+
+## import 和 require
 
 
