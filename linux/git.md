@@ -16,3 +16,9 @@ HEAD^：上一个版本，也可以写成 HEAD~1， HEAD~2 撤销 2 次 commit
 ```
 git commit --amend
 ```
+
+##### 删除远程已经删除的分支
+
+```
+git remote prune origin
+```
